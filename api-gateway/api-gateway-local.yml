@@ -11,6 +11,29 @@ ribbon:
   ReadTimeout: 10000
   ConnectTimeout: 3000
 
+zuul:
+  routes:
+    service-00:
+      path: /service-00/**
+      url: ribbon-service-00
+    service-01:
+      path: /service-01/**
+      url: ribbon-service-01
+    service-02:
+      path: /service-02/**
+      url: ribbon-service-02
+    service-03:
+      path: /service-03/**
+      url: ribbon-service-03
+    service-04:
+      path: /service-04/**
+      url: ribbon-service-04
+    actuator:
+      path: /actuator/**
+      url: forward:/actuator
+    error-404:
+      path: /**
+      url: forward:/error-404
 
 ribbon-service-00:
   ribbon:
