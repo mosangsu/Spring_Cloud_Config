@@ -3,7 +3,7 @@ server:
 
 logging:
   file: ag_process
-  path: /var/log 
+  path: /var/log
 
 ribbon:
   eureka:
@@ -28,6 +28,9 @@ zuul:
     service-04:
       path: /service-04/**
       url: ribbon-service-04
+    actuator:
+      path: /actuator/**
+      url: forward:/actuator
     error-404:
       path: /**
       url: forward:/error-404
