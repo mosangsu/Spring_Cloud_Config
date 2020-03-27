@@ -1,0 +1,84 @@
+server:
+  port: 8080
+
+logging:
+  file: ag_process
+  path: /var/log 
+
+ribbon:
+  eureka:
+    enabled: false
+  ReadTimeout: 10000
+  ConnectTimeout: 3000
+
+zuul:
+  routes:
+    service-00:
+      path: /service-00/**
+      url: ribbon-service-00
+    service-01:
+      path: /service-01/**
+      url: ribbon-service-01
+    service-02:
+      path: /service-02/**
+      url: ribbon-service-02
+    service-03:
+      path: /service-03/**
+      url: ribbon-service-03
+    service-04:
+      path: /service-04/**
+      url: ribbon-service-04
+    error-404:
+      path: /**
+      url: forward:/error-404
+
+ribbon-service-00:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: 172.31.30.1:8888
+    ServerListRefreshInterval: 10000
+    ConnectTimeout: 1000
+    ReadTimeout: 5000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100
+ribbon-service-01:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8011,localhost:8012
+    ServerListRefreshInterval: 10000
+    ConnectTimeout: 1000
+    ReadTimeout: 5000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100
+ribbon-service-02:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8021,localhost:8022
+    ServerListRefreshInterval: 10000
+    ConnectTimeout: 1000
+    ReadTimeout: 5000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100
+ribbon-service-03:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8031,localhost:8032
+    ServerListRefreshInterval: 10000
+    ConnectTimeout: 1000
+    ReadTimeout: 5000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100
+ribbon-service-04:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8041,localhost:8042
+    ServerListRefreshInterval: 10000
+    ConnectTimeout: 1000
+    ReadTimeout: 5000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100
