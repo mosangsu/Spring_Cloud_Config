@@ -1,0 +1,3 @@
+server:
+  port: 8002
+  additionalPorts: 8031,8032,8041,8042
