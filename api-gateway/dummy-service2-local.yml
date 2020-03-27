@@ -1,3 +1,7 @@
 server:
   port: 8002
+<<<<<<< HEAD
   additionalPorts: 8031,8032,8041,8042
+=======
+  additionalPorts: [8031, 8032, 8041, 8042]
+>>>>>>> refs/remotes/origin/master
