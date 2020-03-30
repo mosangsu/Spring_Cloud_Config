@@ -19,6 +19,7 @@ ribbon:
   ConnectTimeout: 3000
 
 zuul:
+  retryable: true
   routes:
     service-00:
       path: /service-00/**
@@ -92,3 +93,4 @@ ribbon-service-04:
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
     MaxConnectionsPerHost: 100
+    MaxAutoRetriesNextServer: 1
