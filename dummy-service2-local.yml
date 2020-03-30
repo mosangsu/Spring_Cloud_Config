@@ -1,3 +1,10 @@
 server:
   port: 8002
-  additionalPorts: 8031,8032,8041,8042
+  additionalPorts: 8012,8022,8032,8042
+  
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
