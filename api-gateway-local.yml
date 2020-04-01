@@ -90,7 +90,6 @@ ribbon-service-04:
     listOfServers: localhost:8041,localhost:8042
     ServerListRefreshInterval: 10000
     ConnectTimeout: 1000
-    ReadTimeout: 5000
+    ReadTimeout: 500
     MaxTotalHttpConnections: 500
     MaxConnectionsPerHost: 100
-    MaxAutoRetriesNextServer: 1
