@@ -49,7 +49,7 @@ ribbon-service-00:
       enabled: false
     listOfServers: 172.31.30.1:8888
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
-    NFLoadBalancerPingClassName: com.kt.iptb.mbs.apiGateway.configuration.ServerAlivePing
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
     ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
@@ -61,7 +61,7 @@ ribbon-service-01:
       enabled: false
     listOfServers: localhost:8011,localhost:8012
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
-    NFLoadBalancerPingClassName: com.kt.iptb.mbs.apiGateway.configuration.ServerAlivePing
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
     ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
@@ -73,7 +73,7 @@ ribbon-service-02:
       enabled: false
     listOfServers: localhost:8021,localhost:8022
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
-    NFLoadBalancerPingClassName: com.kt.iptb.mbs.apiGateway.configuration.ServerAlivePing
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
     ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
@@ -85,7 +85,7 @@ ribbon-service-03:
       enabled: false
     listOfServers: localhost:8031,localhost:8032
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
-    NFLoadBalancerPingClassName: com.kt.iptb.mbs.apiGateway.configuration.ServerAlivePing
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
     ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
