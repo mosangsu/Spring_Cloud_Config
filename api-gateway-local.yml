@@ -97,7 +97,7 @@ ribbon-service-04:
       enabled: false
     listOfServers: localhost:8041,localhost:8042
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
-    NFLoadBalancerPingClassName: com.kt.iptb.mbs.apiGateway.configuration.ServerAlivePing
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
     ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
