@@ -50,7 +50,7 @@ ribbon-service-00:
     listOfServers: 172.31.30.1:8888
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
     NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
-    ServerListRefreshInterval: 3000
+    ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
@@ -62,7 +62,7 @@ ribbon-service-01:
     listOfServers: localhost:8011,localhost:8012
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
     NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
-    ServerListRefreshInterval: 3000
+    ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
@@ -74,7 +74,7 @@ ribbon-service-02:
     listOfServers: localhost:8021,localhost:8022
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
     NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
-    ServerListRefreshInterval: 3000
+    ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
@@ -86,7 +86,7 @@ ribbon-service-03:
     listOfServers: localhost:8031,localhost:8032
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
     NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
-    ServerListRefreshInterval: 3000
+    ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
@@ -98,7 +98,7 @@ ribbon-service-04:
     listOfServers: localhost:8041,localhost:8042
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
     NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
-    ServerListRefreshInterval: 3000
+    ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
