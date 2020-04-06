@@ -89,6 +89,7 @@ ribbon-service-04:
       enabled: false
     listOfServers: localhost:8041,localhost:8042
     ServerListRefreshInterval: 3000
+    NFLoadBalancerPingInterval: 5
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
