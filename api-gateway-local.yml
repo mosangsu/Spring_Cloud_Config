@@ -48,7 +48,9 @@ ribbon-service-00:
     eureka:
       enabled: false
     listOfServers: 172.31.30.1:8888
-    ServerListRefreshInterval: 10000
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
+    ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
@@ -58,7 +60,9 @@ ribbon-service-01:
     eureka:
       enabled: false
     listOfServers: localhost:8011,localhost:8012
-    ServerListRefreshInterval: 10000
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
+    ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
@@ -68,7 +72,9 @@ ribbon-service-02:
     eureka:
       enabled: false
     listOfServers: localhost:8021,localhost:8022
-    ServerListRefreshInterval: 10000
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
+    ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
@@ -78,7 +84,9 @@ ribbon-service-03:
     eureka:
       enabled: false
     listOfServers: localhost:8031,localhost:8032
-    ServerListRefreshInterval: 10000
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
+    ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
@@ -88,12 +96,10 @@ ribbon-service-04:
     eureka:
       enabled: false
     listOfServers: localhost:8041,localhost:8042
-    ServerListRefreshInterval: 10000
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.AvailabilityFilteringRule
+    NFLoadBalancerPingClassName: com.netflix.loadbalancer.PingUrl
+    ServerListRefreshInterval: 3000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
     MaxConnectionsPerHost: 100
-    
-    retryableStatusCodes: 500
-    MaxAutoRetries: 2
-    MaxAutoRetriesNextServer: 1
