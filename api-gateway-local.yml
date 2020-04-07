@@ -89,11 +89,7 @@ ribbon-service-04:
       enabled: false
     listOfServers: localhost:8041,localhost:8042
     ServerListRefreshInterval: 15000
-<<<<<<< HEAD
     ConnectTimeout: 1000
-=======
-    ConnectTimeout: 100
->>>>>>> refs/remotes/origin/master
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
     MaxConnectionsPerHost: 100
