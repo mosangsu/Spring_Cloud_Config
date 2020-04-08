@@ -17,8 +17,6 @@ ribbon:
     enabled: false
   ReadTimeout: 10000
   ConnectTimeout: 3000
-  eager-load:
-    enabled: true
 
 zuul:
   retryable: true
