@@ -19,7 +19,7 @@ ribbon:
   ConnectTimeout: 3000
 
 zuul:
-  retryable: true
+  ## retryable: true
   routes:
     service-00:
       path: /service-00/**
