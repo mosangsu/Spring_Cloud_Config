@@ -30,7 +30,7 @@ updateAllServerList()가 가진 문제점은?
 이 메소드는 각각의 서버에 Ping을 쏘고 그 결과를 서버리스트에 저장하는 역할을 한다.  
 이상한 점은 Ping을 쏘기 전에 서버 상태를 전부 true(=살아있음)로 바꾼다는 것이다.  
 ```
-protected void updateAllServerList(List<T> ls) {
+    protected void updateAllServerList(List<T> ls) {
         // other threads might be doing this - in which case, we pass
         if (serverListUpdateInProgress.compareAndSet(false, true)) {
             try {
