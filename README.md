@@ -29,7 +29,25 @@ Eureka 없이 로드밸런서를 구현하는 것은 예상보다 쉬웠다. Rib
 updateAllServerList()가 가진 문제점은?  
 이 메소드는 각각의 서버에 Ping을 쏘고 그 결과를 서버리스트에 저장하는 역할을 한다.  
 이상한 점은 Ping을 쏘기 전에 서버 상태를 전부 true(=살아있음)로 바꾼다는 것이다.  
-[]
+```
+protected void updateAllServerList(List<T> ls) {
+        // other threads might be doing this - in which case, we pass
+        if (serverListUpdateInProgress.compareAndSet(false, true)) {
+            try {
+                for (T s : ls) {
+                    s.setAlive(true); // set so that clients can start using these
+                                      // servers right away instead
+                                      // of having to wait out the ping cycle.
+                }
+                if (allServerList == null || allServerList.size() == 0)
+                	setServersList(ls);
+                super.forceQuickPing();
+            } finally {
+                serverListUpdateInProgress.set(false);
+            }
+        }
+    }
+```
 
 어떤 의도로 코드가 이렇게 작성되었는지는 정확히 모르겠지만 서버 상태를 전부 true로 바꾸는 구문에는 분명 문제가 있었다.  
 서버가 초기 구동되었을 때 allServerList가 초기화되어 있지 않기 때문에 setServerList()를 아예 지워버리면 에러가 생긴다.  
@@ -37,6 +55,6 @@ updateAllServerList()가 가진 문제점은?
 
 
 ## 관련된 Github 이슈들
-https://github.com/spring-cloud/spring-cloud-netflix/issues/2485
-https://github.com/Netflix/ribbon/issues/368
-https://github.com/Netflix/ribbon/issues/354
+https://github.com/spring-cloud/spring-cloud-netflix/issues/2485  
+https://github.com/Netflix/ribbon/issues/368  
+https://github.com/Netflix/ribbon/issues/354  
