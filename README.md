@@ -34,3 +34,9 @@ updateAllServerList()가 가진 문제점은?
 어떤 의도로 코드가 이렇게 작성되었는지는 정확히 모르겠지만 서버 상태를 전부 true로 바꾸는 구문에는 분명 문제가 있었다.  
 서버가 초기 구동되었을 때 allServerList가 초기화되어 있지 않기 때문에 setServerList()를 아예 지워버리면 에러가 생긴다.  
 그래서 간단하게 "allServerList가 null이거나 비어있을 때만 true로 초기화한다" 구문만 추가했다.  
+
+
+## 관련된 Github 이슈들
+https://github.com/spring-cloud/spring-cloud-netflix/issues/2485
+https://github.com/Netflix/ribbon/issues/368
+https://github.com/Netflix/ribbon/issues/354
