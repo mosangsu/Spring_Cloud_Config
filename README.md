@@ -34,13 +34,11 @@ updateAllServerList()가 가진 문제점은?
         // other threads might be doing this - in which case, we pass
         if (serverListUpdateInProgress.compareAndSet(false, true)) {
             try {
-                for (T s : ls) {
-                    s.setAlive(true); // set so that clients can start using these
-                                      // servers right away instead
-                                      // of having to wait out the ping cycle.
+                for (T s : ls) {            // for문으로 모든 서버 상태를 true로 변경
+                    s.setAlive(true);
                 }
-                setServersList(ls);
-                super.forceQuickPing();
+                setServersList(ls);         // 변경된 값을 allServerList에 저장
+                super.forceQuickPing();     // 각각의 서버에 Ping을 보내 서버 상태를 체크해서 allServerList를 업데이트
             } finally {
                 serverListUpdateInProgress.set(false);
             }
