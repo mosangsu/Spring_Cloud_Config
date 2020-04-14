@@ -45,6 +45,7 @@ zuul:
     error-404:
       path: /**
       url: forward:/error/404
+      strip-prefix: true
 
 ribbon-service-00:
   ribbon:
