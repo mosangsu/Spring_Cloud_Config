@@ -36,16 +36,6 @@ zuul:
     service-04:
       path: /service-04/**
       url: ribbon-service-04
-    actuator:
-      path: /actuator/**
-      url: forward:/actuator
-    error:
-      path: /error/**
-      url: forward:/error
-    error-404:
-      path: /**
-      url: forward:/error/404
-      strip-prefix: false
 
 ribbon-service-00:
   ribbon:
