@@ -39,9 +39,12 @@ zuul:
     actuator:
       path: /actuator/**
       url: forward:/actuator
+    error:
+      path: /error/**
+      url: forward:/error
     error-404:
       path: /**
-      url: forward:/error-404
+      url: forward:/error/404
 
 ribbon-service-00:
   ribbon:
@@ -88,7 +91,7 @@ ribbon-service-04:
     eureka:
       enabled: false
     listOfServers: localhost:8041,localhost:8042
-    ServerListRefreshInterval: 2000
+    ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
     ReadTimeout: 5000
     MaxTotalHttpConnections: 500
