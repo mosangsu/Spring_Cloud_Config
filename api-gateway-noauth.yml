@@ -15,8 +15,6 @@ logging:
 ribbon:
   eureka:
     enabled: false
-  eager-load:
-    enabled: true
   ReadTimeout: 10000
   ConnectTimeout: 3000
 
