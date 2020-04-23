@@ -44,8 +44,6 @@ zuul:
 
 ribbon-service:
   ribbon:
-    eureka:
-      enabled: false
     listOfServers: localhost:8011,localhost:8012
     ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
@@ -54,8 +52,6 @@ ribbon-service:
     MaxConnectionsPerHost: 100
 ribbon-service-00:
   ribbon:
-    eureka:
-      enabled: false
     listOfServers: 172.31.30.1:8888
     ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
@@ -64,8 +60,6 @@ ribbon-service-00:
     MaxConnectionsPerHost: 100
 ribbon-service-01:
   ribbon:
-    eureka:
-      enabled: false
     listOfServers: localhost:8011,localhost:8012
     ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
@@ -74,8 +68,6 @@ ribbon-service-01:
     MaxConnectionsPerHost: 100
 ribbon-service-02:
   ribbon:
-    eureka:
-      enabled: false
     listOfServers: localhost:8021,localhost:8022
     ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
@@ -84,8 +76,6 @@ ribbon-service-02:
     MaxConnectionsPerHost: 100
 ribbon-service-03:
   ribbon:
-    eureka:
-      enabled: false
     listOfServers: localhost:8031,localhost:8032
     ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
@@ -94,8 +84,6 @@ ribbon-service-03:
     MaxConnectionsPerHost: 100
 ribbon-service-04:
   ribbon:
-    eureka:
-      enabled: false
     listOfServers: localhost:8041,localhost:8042
     ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
