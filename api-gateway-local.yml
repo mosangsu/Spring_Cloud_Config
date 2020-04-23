@@ -23,6 +23,9 @@ ribbon:
 zuul:
   retryable: true
   routes:
+    service:
+      path: /service/**
+      url: ribbon-service
     service-00:
       path: /service-00/**
       url: ribbon-service-00
@@ -39,6 +42,16 @@ zuul:
       path: /service-04/**
       url: ribbon-service-04
 
+ribbon-service:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: localhost:8011,localhost:8012
+    ServerListRefreshInterval: 15000
+    ConnectTimeout: 1000
+    ReadTimeout: 5000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100
 ribbon-service-00:
   ribbon:
     eureka:
