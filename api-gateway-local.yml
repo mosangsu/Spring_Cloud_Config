@@ -24,7 +24,7 @@ zuul:
   retryable: true
   routes:
     service:
-      path: /service/**
+      path: /**/packagelist/**
       url: ribbon-service
     service-00:
       path: /service-00/**
