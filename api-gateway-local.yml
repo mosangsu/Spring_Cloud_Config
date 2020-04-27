@@ -26,13 +26,13 @@ zuul:
     service:
       path: /service/**
       url: ribbon-service
-    service:
+    mbs-app:
       path: /mbs-app/**
       url: ribbon-mbs-app
-    service:
+    mbs-cms:
       path: /mbs-cms/**
       url: ribbon-mbs-cms
-    service:
+    mbs-dbs:
       path: /mbs-dbs/**
       url: ribbon-mbs-dbs
 
