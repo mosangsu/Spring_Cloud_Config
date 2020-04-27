@@ -24,27 +24,45 @@ zuul:
   retryable: true
   routes:
     service:
-      path: /**/packagelist/**
+      path: /service/**
       url: ribbon-service
-    service-00:
-      path: /service-00/**
-      url: ribbon-service-00
-    service-01:
-      path: /service-01/**
-      url: ribbon-service-01
-    service-02:
-      path: /service-02/**
-      url: ribbon-service-02
-    service-03:
-      path: /service-03/**
-      url: ribbon-service-03
-    service-04:
-      path: /service-04/**
-      url: ribbon-service-04
+    service:
+      path: /mbs-app/**
+      url: ribbon-mbs-app
+    service:
+      path: /mbs-cms/**
+      url: ribbon-mbs-cms
+    service:
+      path: /mbs-dbs/**
+      url: ribbon-mbs-dbs
 
 ribbon-service:
   ribbon:
+    listOfServers: localhost:8011,localhost:8012,localhost:8021,localhost:8022,localhost:8031,localhost:8032
+    ServerListRefreshInterval: 15000
+    ConnectTimeout: 1000
+    ReadTimeout: 5000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100
+ribbon-mbs-app:
+  ribbon:
     listOfServers: localhost:8011,localhost:8012
+    ServerListRefreshInterval: 15000
+    ConnectTimeout: 1000
+    ReadTimeout: 5000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100
+ribbon-mbs-cms:
+  ribbon:
+    listOfServers: localhost:8021,localhost:8022
+    ServerListRefreshInterval: 15000
+    ConnectTimeout: 1000
+    ReadTimeout: 5000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 100
+ribbon-mbs-dbs:
+  ribbon:
+    listOfServers: localhost:8031,localhost:8032
     ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
     ReadTimeout: 5000
@@ -53,30 +71,6 @@ ribbon-service:
 ribbon-service-00:
   ribbon:
     listOfServers: 172.31.30.1:8888
-    ServerListRefreshInterval: 15000
-    ConnectTimeout: 1000
-    ReadTimeout: 5000
-    MaxTotalHttpConnections: 500
-    MaxConnectionsPerHost: 100
-ribbon-service-01:
-  ribbon:
-    listOfServers: localhost:8011,localhost:8012
-    ServerListRefreshInterval: 15000
-    ConnectTimeout: 1000
-    ReadTimeout: 5000
-    MaxTotalHttpConnections: 500
-    MaxConnectionsPerHost: 100
-ribbon-service-02:
-  ribbon:
-    listOfServers: localhost:8021,localhost:8022
-    ServerListRefreshInterval: 15000
-    ConnectTimeout: 1000
-    ReadTimeout: 5000
-    MaxTotalHttpConnections: 500
-    MaxConnectionsPerHost: 100
-ribbon-service-03:
-  ribbon:
-    listOfServers: localhost:8031,localhost:8032
     ServerListRefreshInterval: 15000
     ConnectTimeout: 1000
     ReadTimeout: 5000
